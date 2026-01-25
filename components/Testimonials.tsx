@@ -55,7 +55,7 @@ export default function Testimonials() {
             Veja mais depoimentos no Google
           </p>
           <a
-            href="https://www.google.com/search?q=BS+Odonto+Belo+Horizonte"
+            href="https://www.google.com/search?q=Consultório+Odontológico+BS+Belo+Horizonte"
             target="_blank"
             rel="noopener noreferrer"
             className="text-primary font-semibold hover:text-primary-dark transition-colors inline-flex items-center"

@@ -27,7 +27,7 @@ export default function Testimonials() {
             O que nossos pacientes dizem
           </h2>
           <p className="text-lg text-neutral-gray max-w-2xl mx-auto">
-            Depoimentos reais de quem confia na BS Odonto
+            Depoimentos reais de quem confia na gente
           </p>
         </div>
 

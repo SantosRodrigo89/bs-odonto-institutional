@@ -12,11 +12,6 @@ const differentials = [
     description: 'Experiência comprovada no tratamento de DTM e dores faciais',
   },
   {
-    icon: '🔍',
-    title: 'Diagnóstico preciso',
-    description: 'Avaliação detalhada com tecnologia moderna e exames completos',
-  },
-  {
     icon: '💻',
     title: 'Tecnologia moderna',
     description: 'Equipamentos de última geração para tratamentos eficazes',

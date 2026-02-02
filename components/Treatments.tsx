@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { title } from 'process'
 import React from 'react'
 
 const whatsappUrl = 'https://api.whatsapp.com/send?phone=5531985280016&text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o.'
@@ -19,7 +20,7 @@ const treatments = [
   {
     title: 'Odontologia Estética',
     description:
-      'Transforme seu sorriso com procedimentos estéticos modernos, incluindo clareamento, facetas e harmonização facial.',
+      'Transforme seu sorriso com procedimentos estéticos modernos, incluindo clareamento, facetas, harmonização facial, próteses totais e parciais.',
     icon: '✨',
   },
   {
@@ -28,6 +29,33 @@ const treatments = [
       'Tratamento com aparelhos intraorais para ronco e apneia do sono, melhorando sua respiração e qualidade de vida.',
     icon: '🌙',
   },
+  {
+    title: 'Tratamento de canal',
+    description:
+      'Procedimentos avançados para salvar dentes comprometidos, aliviando a dor e restaurando a saúde bucal.',
+    icon: '🦷',
+  },
+  {
+    title: 'Aparelhos ortodônticos',
+    description:
+      'Correção de alinhamento dentário e mordida com opções modernas de aparelhos, proporcionando um sorriso saudável e bonito.',
+    icon: '📐',
+  },
+  {
+    title: 'Implantes dentários',
+    description:
+      'Soluções de implantes para substituir dentes perdidos, restaurando a função mastigatória e a estética do sorriso.',
+    icon: '🔩',
+  },
+  { title: "Cirurgia de ciso", 
+    description: "Procedimento cirúrgico para correção de problemas estruturais da mandíbula e maxilar.",
+    icon: "🩺",
+  },
+  {
+    title: 'Atendimento infantil',
+    description: 'Cuidados especializados para a saúde bucal de crianças, promovendo hábitos saudáveis e prevenindo problemas futuros.',
+    icon: '👶',
+  }
 ]
 
 export default function Treatments() {
@@ -86,7 +114,7 @@ export default function Treatments() {
             rel="noopener noreferrer"
             className="btn-primary text-lg px-8 py-4"
           >
-            Agendar avaliação gratuita
+            Agendar avaliação
           </a>
         </div>
       </div>

@@ -1,6 +1,21 @@
 import React from "react"
 
 const symptoms = [
+  { 
+    icon: '😮',
+    title: 'Insatisfeito com a estética dos seus dentes',
+    description: 'Deseja melhorar o sorriso e a aparência facial',
+  },
+  {
+    icon: '😖',
+    title: 'Dor de dente',
+    description: 'Sensibilidade ou dor persistente nos dentes',
+  },
+  {
+    icon: '😤',
+    title: 'Falha de dentes',
+    description: 'Limitação no movimento da mandíbula',
+  },
   {
     icon: '😣',
     title: 'Dor na face ou mandíbula',
@@ -30,7 +45,7 @@ const symptoms = [
     icon: '🦷',
     title: 'Desgaste dentário',
     description: 'Dentes desgastados ou fraturados',
-  },
+  }
 ]
 
 export default function Symptoms() {
@@ -39,7 +54,7 @@ export default function Symptoms() {
       <div className="container-custom">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-            Você sente algum desses sintomas?
+            Você tem algum desses problemas?
           </h2>
           <p className="text-lg text-neutral-gray max-w-2xl mx-auto">
             Estes são sinais que podem indicar a necessidade de tratamento especializado

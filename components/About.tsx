@@ -94,7 +94,7 @@ export default function About() {
           <div className='text-center'>
             <div className='relative w-64 h-64 mx-auto mb-6 rounded-2xl overflow-hidden shadow-xl'>
               <Image
-                src='/images/mara.jpg'
+                src='/images/mara.jpeg'
                 alt='Dra. Mara Cristina Amorim'
                 fill
                 className='object-cover'
@@ -106,7 +106,7 @@ export default function About() {
             <p className='text-neutral-gray mb-4'>
               Especialista em estomatologia (doenças da cavidade oral)
             </p>
-            {/* <p className='text-sm text-neutral-gray'>CRO: [Número do CRO]</p> */}
+            <p className='text-sm text-neutral-gray'>CRO: [24899]</p>
           </div>
         </div>
 
@@ -114,13 +114,27 @@ export default function About() {
         <div className='max-w-4xl mx-auto'>
           <div className='bg-neutral-offWhite p-8 md:p-12 rounded-2xl shadow-md'>
             <p className='text-lg text-neutral-gray leading-relaxed mb-6'>
-              Nosso consultório é um{' '}
-              <strong className='text-primary'>espaço acolhedor</strong> onde
-              você encontra{' '}
-              <strong className='text-primary'>
-                profissionais especializados
-              </strong>{' '}
-              em todas as áreas da odontologia.
+              Acreditamos que{' '}
+              <strong className='text-primary'> cada sorriso</strong>, conta uma
+              história única. Com anos de experiência e dedicação, oferecemos
+              tratamentos personalizados que vão além da estética, focando na
+              sua saúde, bem-estar e qualidade de vida.
+            </p>
+            <p className='text-lg text-neutral-gray leading-relaxed mb-6'>
+              Nosso consultório é um espaço acolhedor onde você encontra
+              profissionais especializados em todas as áreas da odontologia{' '}
+              <strong className='text-primary'>DTM</strong>,{' '}
+              <strong className='text-primary'>bruxismo</strong>,{' '}
+              <strong className='text-primary'>ronco/apneia</strong> e{' '}
+              <strong className='text-primary'>odontologia estética</strong>.
+              Utilizamos tecnologia de ponta e técnicas modernas para garantir
+              resultados excepcionais.
+            </p>
+            <p className='text-lg text-neutral-gray leading-relaxed'>
+              Nosso compromisso é com o seu conforto, segurança e satisfação.
+              Venha conhecer a diferença que fazemos na vida dos nossos
+              pacientes em{' '}
+              <strong className='text-primary'>Belo Horizonte</strong>.
             </p>
           </div>
         </div>

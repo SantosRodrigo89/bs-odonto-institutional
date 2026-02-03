@@ -24,7 +24,7 @@ const symptoms = [
   {
     icon: '😬',
     title: 'Bruxismo',
-    description: 'Ranger ou apertar os dentes durante o sono',
+    description: 'Ranger ou apertar os dentes durante o sono ou mesmo durante o dia',
   },
   {
     icon: '🔊',

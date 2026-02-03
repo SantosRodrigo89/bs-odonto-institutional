@@ -43,8 +43,8 @@ export default function Header() {
             <Image
               src="/images/logo.png"
               alt="BS Odonto Logo"
-              width={60}
-              height={60}
+              width={84}
+              height={84}
               className="rounded-lg shadow-sm"
               priority
             />

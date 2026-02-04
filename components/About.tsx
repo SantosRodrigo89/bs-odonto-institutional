@@ -31,7 +31,7 @@ export default function About() {
               Especialista em dentística restauradora (estética, clareamento,
               próteses e implantes)
             </p>
-            <p className='text-sm text-neutral-gray'>CRO: [25292]</p>
+            <p className='text-sm text-neutral-gray'>CRO-MG: [25292]</p>
           </div>
 
           {/* Dra. Sílvia */}
@@ -51,7 +51,7 @@ export default function About() {
               Especialista em endodontia Realiza também tratamento de DTM e
               bruxismo, tratamento de apnéia e atendimento de crianças.
             </p>
-            <p className='text-sm text-neutral-gray'>CRO: [24836]</p>
+            <p className='text-sm text-neutral-gray'>CRO-MG: [24836]</p>
           </div>
 
           <div className='text-center'>
@@ -70,24 +70,24 @@ export default function About() {
               Especialista em cirurgia (implantes e cisos) e periodontia
               (tratamento de gengiva)
             </p>
-            {/* <p className='text-sm text-neutral-gray'>CRO: [25292]</p> */}
+            <p className='text-sm text-neutral-gray'>CRO-MG: [28477]</p>
           </div>
 
           {/* Dra. Cíntia Mota */}
           <div className='text-center'>
             <div className='relative w-64 h-64 mx-auto mb-6 rounded-2xl overflow-hidden shadow-xl'>
               <Image
-                src='/images/cintia.jpg'
-                alt='Dra. Cíntia Mota'
-                fill
-                className='object-cover'
+              src='/images/cintia.png'
+              alt='Dra. Cíntia Mota'
+              fill
+              className='object-cover'
               />
             </div>
             <h3 className='text-2xl font-bold text-primary mb-2'>
               Dra. Cíntia Mota
             </h3>
             <p className='text-neutral-gray mb-4'>Especialista em ortodontia</p>
-            {/* <p className='text-sm text-neutral-gray'>CRO: [Número do CRO]</p> */}
+            <p className='text-sm text-neutral-gray'>CRO-MG: [45663]</p>
           </div>
 
           {/* Dra. Mara Cristina Amorim */}
@@ -106,7 +106,7 @@ export default function About() {
             <p className='text-neutral-gray mb-4'>
               Especialista em estomatologia (doenças da cavidade oral)
             </p>
-            <p className='text-sm text-neutral-gray'>CRO: [24899]</p>
+            <p className='text-sm text-neutral-gray'>CRO-MG: [24899]</p>
           </div>
         </div>
 

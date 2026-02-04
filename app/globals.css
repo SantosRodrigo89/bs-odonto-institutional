@@ -5,12 +5,19 @@
 @tailwind utilities;
 
 @layer base {
+  /* Reset global margins, padding and set box-sizing */
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-neutral-offWhite text-neutral-dark;
+    @apply bg-neutral-offWhite text-neutral-dark overflow-x-hidden;
     font-family: 'Inter', sans-serif;
   }
 

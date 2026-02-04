@@ -9,7 +9,6 @@ import Differentials from '@/components/Differentials'
 import Location from '@/components/Location'
 import Footer from '@/components/Footer'
 import FloatingWhatsApp from '@/components/FloatingWhatsApp'
-import React from 'react'
 
 export default function Home() {
   return (

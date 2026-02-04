@@ -12,12 +12,17 @@
     box-sizing: border-box;
   }
 
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-neutral-offWhite text-neutral-dark overflow-x-hidden;
+    @apply bg-neutral-offWhite text-neutral-dark;
     font-family: 'Inter', sans-serif;
   }
 

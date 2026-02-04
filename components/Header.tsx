@@ -29,13 +29,13 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full overflow-hidden ${
         isScrolled
           ? 'bg-white shadow-md'
           : 'bg-neutral-offWhite/95 backdrop-blur-sm'
       }`}
     >
-      <nav className="container-custom section-padding py-4">
+      <nav className="container-custom px-4 md:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="#inicio" className="flex items-center">

@@ -90,6 +90,26 @@ export default function Footer() {
           <p className="text-white/80 text-sm">
             © {new Date().getFullYear()} BS Odonto. Todos os direitos reservados.
           </p>
+          <p className='mt-1'>
+                Feito por{' '}
+                <a
+                  href='https://github.com/SantosRodrigo89'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='hover:text-sky-300 transition'
+                >
+                  Rodrigo Vieira
+                </a>{' '}
+                |{' '}
+                <a
+                  href='https://www.linkedin.com/in/rodrigo-v-b9ba696a/'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='hover:text-sky-300 transition'
+                >
+                  LinkedIn
+                </a>
+              </p>
         </div>
       </div>
     </footer>

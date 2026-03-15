@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react'
+import { FiCamera } from 'react-icons/fi'
 
 export default function Results() {
   return (
@@ -21,7 +22,9 @@ export default function Results() {
               className="bg-neutral-offWhite rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 aspect-[4/3] flex items-center justify-center"
             >
               <div className="text-center p-8">
-                <div className="text-4xl mb-4">📸</div>
+                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <FiCamera className="w-7 h-7 text-primary" />
+                </div>
                 <p className="text-neutral-gray font-medium">
                   Antes e Depois
                 </p>

@@ -24,6 +24,7 @@ export default function Header() {
     { name: 'Sobre', href: '#sobre' },
     { name: 'Resultados', href: '#resultados' },
     { name: 'Depoimentos', href: '#depoimentos' },
+    { name: 'Perguntas', href: '#faq' },
     { name: 'Contato', href: '#contato' },
   ]
 

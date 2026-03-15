@@ -1,4 +1,5 @@
-import React from "react"
+import React from 'react'
+import { LuStar } from 'react-icons/lu'
 
 export default function Testimonials() {
   const testimonials = [
@@ -37,9 +38,9 @@ export default function Testimonials() {
               key={index}
               className="bg-neutral-offWhite p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-secondary/20"
             >
-              <div className="flex mb-4">
+              <div className="flex gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <span key={i} className="text-yellow-400 text-xl">⭐</span>
+                  <LuStar key={i} className="w-5 h-5 text-primary fill-primary/30" strokeWidth={1.5} />
                 ))}
               </div>
               <p className="text-neutral-gray mb-4 italic leading-relaxed">

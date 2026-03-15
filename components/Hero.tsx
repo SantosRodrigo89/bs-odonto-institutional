@@ -12,10 +12,10 @@ export default function Hero() {
           {/* Content */}
           <div className="text-center md:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6">
-              Seu sorriso é a nossa especialidade.
+              Seu sorriso é nossa especialidade.
             </h1>
             <p className="text-xl md:text-2xl text-neutral-gray mb-8 leading-relaxed">
-              Tratamentos personalizados para eliminar a dor, restaurar a função e transformar o seu sorriso.
+              Atendimento personalizado, diagnóstico preciso e tratamentos que priorizam saúde, conforto e resultados duradouros.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <a

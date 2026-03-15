@@ -1,4 +1,5 @@
-import React from "react"
+import React from 'react'
+import { FiMapPin, FiPhone, FiClock } from 'react-icons/fi'
 
 const whatsappUrl = 'https://api.whatsapp.com/send?phone=5531985280016&text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o.'
 
@@ -26,16 +27,20 @@ export default function Location() {
             </h3>
             
             <div className="space-y-4 mb-8">
-              <div className="flex items-start">
-                <span className="text-2xl mr-4">📍</span>
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                  <FiMapPin className="w-5 h-5 text-primary" />
+                </div>
                 <div>
                   <p className="font-semibold text-neutral-dark mb-1">Endereço</p>
                   <p className="text-neutral-gray">{address}</p>
                 </div>
               </div>
 
-              <div className="flex items-start">
-                <span className="text-2xl mr-4">📞</span>
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                  <FiPhone className="w-5 h-5 text-primary" />
+                </div>
                 <div>
                   <p className="font-semibold text-neutral-dark mb-1">WhatsApp</p>
                   <a
@@ -49,13 +54,14 @@ export default function Location() {
                 </div>
               </div>
 
-              <div className="flex items-start">
-                <span className="text-2xl mr-4">🕒</span>
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                  <FiClock className="w-5 h-5 text-primary" />
+                </div>
                 <div>
-                  <p className="font-semibold text-neutral-dark mb-1">Horário de Funcionamento</p>
+                  <p className="font-semibold text-neutral-dark mb-1">Horário de atendimento</p>
                   <p className="text-neutral-gray">
-                    Segunda a Sexta: 8h às 18h<br />
-                    Sábado: 8h às 12h
+                    Atendimento de segunda a sexta
                   </p>
                 </div>
               </div>

@@ -4,7 +4,7 @@ import React from 'react'
 
 export const metadata: Metadata = {
   title: 'BS Odonto - Seu sorriso é a nossa especialidade | DTM, Bruxismo, Ronco/Apneia',
-  description: 'Clínica odontológica especializada em DTM, bruxismo, ronco/apneia e odontologia estética em Belo Horizonte. Dra. Beatriz Alvarenga e Dra. Sílvia Santos. Agende sua avaliação.',
+  description: 'Atendimento personalizado, diagnóstico preciso e tratamentos que priorizam saúde, conforto e resultados duradouros.',
   keywords: 'odontologia Belo Horizonte, DTM, bruxismo, ronco, apneia, odontologia estética, dentista BH',
   authors: [{ name: 'BS Odonto' }],
   icons: {

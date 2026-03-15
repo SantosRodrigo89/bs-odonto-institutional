@@ -109,35 +109,6 @@ export default function About() {
             <p className='text-sm text-neutral-gray'>CRO-MG: [24899]</p>
           </div>
         </div>
-
-        {/* Texto Institucional */}
-        <div className='max-w-4xl mx-auto'>
-          <div className='bg-neutral-offWhite p-8 md:p-12 rounded-2xl shadow-md'>
-            <p className='text-lg text-neutral-gray leading-relaxed mb-6'>
-              Acreditamos que{' '}
-              <strong className='text-primary'> cada sorriso</strong>, conta uma
-              história única. Com anos de experiência e dedicação, oferecemos
-              tratamentos personalizados que vão além da estética, focando na
-              sua saúde, bem-estar e qualidade de vida.
-            </p>
-            <p className='text-lg text-neutral-gray leading-relaxed mb-6'>
-              Nosso consultório é um espaço acolhedor onde você encontra
-              profissionais especializados em todas as áreas da odontologia{' '}
-              <strong className='text-primary'>DTM</strong>,{' '}
-              <strong className='text-primary'>bruxismo</strong>,{' '}
-              <strong className='text-primary'>ronco/apneia</strong> e{' '}
-              <strong className='text-primary'>odontologia estética</strong>.
-              Utilizamos tecnologia de ponta e técnicas modernas para garantir
-              resultados excepcionais.
-            </p>
-            <p className='text-lg text-neutral-gray leading-relaxed'>
-              Nosso compromisso é com o seu conforto, segurança e satisfação.
-              Venha conhecer a diferença que fazemos na vida dos nossos
-              pacientes em{' '}
-              <strong className='text-primary'>Belo Horizonte</strong>.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );

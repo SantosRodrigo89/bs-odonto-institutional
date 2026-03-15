@@ -1,81 +1,120 @@
-import React from "react"
+'use client'
 
-const symptoms = [
-  { 
-    icon: '😮',
-    title: 'Insatisfeito com a estética dos seus dentes',
-    description: 'Deseja melhorar o sorriso e a aparência facial',
-  },
+import React from 'react'
+import { LuActivity } from 'react-icons/lu'
+import { LuSmile } from 'react-icons/lu'
+import { FiMoon } from 'react-icons/fi'
+import { FiSmile } from 'react-icons/fi'
+
+const whatsappUrl = 'https://api.whatsapp.com/send?phone=5531985280016&text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o.'
+
+const symptomCards = [
   {
-    icon: '😖',
-    title: 'Dor de dente',
-    description: 'Sensibilidade ou dor persistente nos dentes',
-  },
-  {
-    icon: '😤',
-    title: 'Falha de dentes',
-    description: 'Limitação no movimento da mandíbula',
-  },
-  {
-    icon: '😣',
+    icon: LuActivity,
     title: 'Dor na face ou mandíbula',
-    description: 'Desconforto constante que afeta seu dia a dia',
+    category: 'Disfunções da ATM',
+    items: [
+      'Desconforto constante ou ao mastigar',
+      'Estalos na articulação (ATM)',
+      'Limitação na abertura da boca',
+      'Dificuldade para abrir ou movimentar a mandíbula',
+      'Dor de cabeça recorrente ao acordar',
+    ],
   },
   {
-    icon: '😬',
-    title: 'Bruxismo',
-    description: 'Ranger ou apertar os dentes durante o sono ou mesmo durante o dia',
+    icon: LuSmile,
+    title: 'Apertamento ou ranger dos dentes',
+    category: 'Bruxismo',
+    items: [
+      'Pode ocorrer durante o sono ou ao longo do dia',
+      'Desgaste dental',
+      'Dentes encurtados, fraturas ou sensibilidade',
+      'Dor muscular ao acordar',
+      'Tensão na face e no pescoço',
+    ],
   },
   {
-    icon: '🔊',
-    title: 'Estalos na ATM',
-    description: 'Sons ao abrir ou fechar a boca',
+    icon: FiMoon,
+    title: 'Sono e Respiração',
+    category: 'Sono e Respiração',
+    items: [
+      'Ronco frequente',
+      'Alterações respiratórias',
+      'Sono não reparador',
+      'Cansaço ao acordar',
+    ],
   },
   {
-    icon: '🤕',
-    title: 'Dor de cabeça',
-    description: 'Cefaleias frequentes relacionadas à ATM',
+    icon: FiSmile,
+    title: 'Reabilitação e Estética',
+    category: 'Reabilitação e Estética',
+    items: [
+      'Ausência de dentes',
+      'Desgaste severo dos dentes',
+      'Insatisfação com a estética do sorriso',
+    ],
   },
-  {
-    icon: '😴',
-    title: 'Ronco',
-    description: 'Problemas respiratórios durante o sono',
-  },
-  {
-    icon: '🦷',
-    title: 'Desgaste dentário',
-    description: 'Dentes desgastados ou fraturados',
-  }
 ]
+
+function IconCircle({ Icon }: { Icon: React.ComponentType<React.SVGAttributes<SVGElement>> }) {
+  return (
+    <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+      <Icon className="w-7 h-7 text-primary" strokeWidth={1.5} />
+    </div>
+  )
+}
 
 export default function Symptoms() {
   return (
     <section className="section-padding bg-white">
       <div className="container-custom">
-        <div className="text-center mb-12">
+        <div className="text-center mb-14">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-            Você tem algum desses problemas?
+            Sintomas que merecem avaliação odontológica especializada
           </h2>
           <p className="text-lg text-neutral-gray max-w-2xl mx-auto">
-            Estes são sinais que podem indicar a necessidade de tratamento especializado
+            Alguns sinais podem indicar alterações funcionais ou estruturais que exigem diagnóstico preciso.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {symptoms.map((symptom, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {symptomCards.map((card, index) => (
             <div
               key={index}
-              className="bg-neutral-offWhite p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-secondary/20"
+              className="bg-neutral-offWhite p-8 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-secondary/20 flex flex-col"
             >
-              <div className="text-5xl mb-4 text-center">{symptom.icon}</div>
-              <h3 className="text-xl font-semibold text-primary mb-2 text-center">
-                {symptom.title}
-              </h3>
-              <p className="text-neutral-gray text-center">
-                {symptom.description}
-              </p>
+              <div className="flex items-center gap-4 mb-5">
+                <IconCircle Icon={card.icon} />
+                <div>
+                  <span className="text-sm font-medium text-primary/80 uppercase tracking-wide">
+                    {card.category}
+                  </span>
+                  <h3 className="text-xl font-semibold text-primary">
+                    {card.title}
+                  </h3>
+                </div>
+              </div>
+              <ul className="space-y-3 text-neutral-gray leading-relaxed flex-1">
+                {card.items.map((item, i) => (
+                  <li key={i} className="flex gap-2">
+                    <span className="text-primary mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-primary" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
+        </div>
+
+        <div className="mt-14 text-center">
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary text-lg px-8 py-4 inline-block"
+          >
+            Agendar avaliação
+          </a>
         </div>
       </div>
     </section>

@@ -3,9 +3,11 @@ import Hero from '@/components/Hero'
 import Symptoms from '@/components/Symptoms'
 import Treatments from '@/components/Treatments'
 import About from '@/components/About'
+import Institutional from '@/components/Institutional'
 import Results from '@/components/Results'
 import Testimonials from '@/components/Testimonials'
 import Differentials from '@/components/Differentials'
+import FAQ from '@/components/FAQ'
 import Location from '@/components/Location'
 import Footer from '@/components/Footer'
 import FloatingWhatsApp from '@/components/FloatingWhatsApp'
@@ -18,9 +20,11 @@ export default function Home() {
       <Symptoms />
       <Treatments />
       <About />
+      <Institutional />
       <Results />
       <Testimonials />
       <Differentials />
+      <FAQ />
       <Location />
       <Footer />
       <FloatingWhatsApp />

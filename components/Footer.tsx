@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import { FiMessageCircle, FiInstagram } from 'react-icons/fi'
 
 const whatsappUrl = 'https://api.whatsapp.com/send?phone=5531985280016&text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o.'
 
@@ -19,10 +20,13 @@ export default function Footer() {
               className="mb-4 rounded-lg"
             />
             <p className="text-white/90 mb-4">
-              Seu sorriso é a nossa especialidade.
+              Seu sorriso é nossa especialidade.
             </p>
             <p className="text-white/80 text-sm">
               Especialistas em DTM, Bruxismo, Ronco/Apneia e Odontologia Estética
+            </p>
+            <p className="text-white/80 text-sm mt-2">
+              Atendimento de segunda a sexta
             </p>
           </div>
 
@@ -66,9 +70,9 @@ export default function Footer() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-white/80 hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors"
               >
-                <span className="mr-2">💬</span>
+                <FiMessageCircle className="w-5 h-5 shrink-0" />
                 WhatsApp: (31) 98528-0016
               </a>
               <div>
@@ -76,9 +80,9 @@ export default function Footer() {
                   href="https://www.instagram.com/bs_odonto"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-white/80 hover:text-white transition-colors"
+                  className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors"
                 >
-                  <span className="mr-2">📷</span>
+                  <FiInstagram className="w-5 h-5 shrink-0" />
                   Instagram
                 </a>
               </div>

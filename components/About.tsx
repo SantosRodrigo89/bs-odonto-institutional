@@ -48,7 +48,7 @@ export default function About() {
               Dra. Sílvia Regina Batista dos Santos
             </h3>
             <p className='text-neutral-gray mb-4'>
-              Especialista em endodontia Realiza também tratamento de DTM e
+              Atendimento em endodontia. Realiza também tratamento de DTM e
               bruxismo, tratamento de apnéia e atendimento de crianças.
             </p>
             <p className='text-sm text-neutral-gray'>CRO-MG: [24836]</p>

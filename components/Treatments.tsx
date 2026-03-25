@@ -1,14 +1,70 @@
 import React from 'react'
-import { LuActivity, LuSmile, LuStethoscope, LuBraces, LuBaby, LuLayers, LuScissors } from 'react-icons/lu'
-import { FiMoon, FiSmile } from 'react-icons/fi'
+import {
+  BruxismoIcon,
+  CanalIcon,
+  DtmIcon,
+  EsteticaIcon,
+  ExtracaoSisoIcon,
+  ImplantIcon,
+  OrtodontiaIcon,
+} from '@/src/components/icons'
 
 const whatsappUrl = 'https://api.whatsapp.com/send?phone=5531985280016&text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o.'
 
-// Icon wrapper for consistent styling
-function TreatmentIcon({ Icon }: { Icon: React.ComponentType<React.SVGAttributes<SVGElement>> }) {
+type IconProps = {
+  size?: number
+  color?: string
+}
+
+const ICON_SIZE = 28
+const ICON_COLOR = '#6B8E8E'
+
+const RoncoIcon = ({ size = ICON_SIZE, color = ICON_COLOR }: IconProps) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 64 64"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    style={{ color }}
+    aria-hidden="true"
+    focusable="false"
+  >
+    <path d="M20 32 C28 26, 36 26, 44 32 C52 38, 52 48, 44 48 C36 48, 28 42, 20 42 C12 42, 12 36, 20 32 Z" />
+    <path d="M16 40 C24 34, 40 34, 48 40" />
+  </svg>
+)
+
+const InfantilIcon = ({ size = ICON_SIZE, color = ICON_COLOR }: IconProps) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 64 64"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    style={{ color }}
+    aria-hidden="true"
+    focusable="false"
+  >
+    <circle cx="32" cy="28" r="14" />
+    <circle cx="26" cy="26" r="2" />
+    <circle cx="38" cy="26" r="2" />
+    <path d="M26 34 C28 38, 36 38, 38 34" />
+    <circle cx="32" cy="44" r="5" />
+    <path d="M30 40 L22 46" />
+  </svg>
+)
+
+function TreatmentIcon({ Icon }: { Icon: React.ComponentType<IconProps> }) {
   return (
     <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mb-4">
-      <Icon className="w-7 h-7 text-primary" strokeWidth={1.5} />
+      <Icon size={ICON_SIZE} color={ICON_COLOR} />
     </div>
   )
 }
@@ -18,55 +74,55 @@ const treatments = [
     title: 'DTM / Dor Orofacial',
     description:
       'Diagnóstico e tratamento das disfunções da articulação temporomandibular, com foco na função, alívio da dor e equilíbrio muscular.',
-    Icon: LuActivity,
+    Icon: DtmIcon,
   },
   {
     title: 'Bruxismo',
     description:
       'Soluções personalizadas com placas oclusais e abordagens multidisciplinares para proteger seus dentes e melhorar sua qualidade de sono.',
-    Icon: LuSmile,
+    Icon: BruxismoIcon,
   },
   {
     title: 'Ronco / Apneia',
     description:
       'Tratamento com aparelhos intraorais para controle do ronco e da apneia leve a moderada, promovendo melhor respiração e qualidade do sono.',
-    Icon: FiMoon,
+    Icon: RoncoIcon,
   },
   {
     title: 'Implantes dentários',
     description:
       'Reposição de dentes perdidos com implantes seguros e planejados individualmente, restaurando função e estética.',
-    Icon: LuLayers,
+    Icon: ImplantIcon,
   },
   {
     title: 'Reabilitação / Estética',
     description:
-      'Transforme seu sorriso com procedimentos estéticos modernos, incluindo clareamento, facetas, harmonização facial, próteses totais e parciais.',
-    Icon: FiSmile,
+      'Transforme seu sorriso com procedimentos estéticos modernos, incluindo clareamento, facetas, próteses totais e parciais.',
+    Icon: EsteticaIcon,
   },
   {
     title: 'Ortodontia',
     description:
       'Correção do alinhamento dentário e da mordida com aparelhos ortodônticos adequados a cada caso.',
-    Icon: LuBraces,
+    Icon: OrtodontiaIcon,
   },
   {
     title: 'Tratamento de Canal',
     description:
       'Tratamento endodôntico para remover infecção, preservar o dente e aliviar a dor.',
-    Icon: LuStethoscope,
+    Icon: CanalIcon,
   },
   {
     title: 'Cirurgia de Siso',
     description:
-      'Extração dos dentes do siso quando há dor, inflamação, infecção ou falta de espaço na arcada.',
-    Icon: LuScissors,
+      'Extração dos dentes siso quando há dor, inflamação, infecção ou falta de espaço na arcada.',
+    Icon: ExtracaoSisoIcon,
   },
   {
     title: 'Atendimento infantil',
     description:
-      'Atendimento especializado para a saúde bucal infantil, com foco em prevenção e desenvolvimento saudável.',
-    Icon: LuBaby,
+      'Atendimento focado na saúde bucal infantil, com foco em prevenção e desenvolvimento saudável.',
+    Icon: InfantilIcon,
   },
 ]
 

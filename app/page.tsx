@@ -21,7 +21,7 @@ export default function Home() {
       <Treatments />
       <About />
       <Institutional />
-      <Results />
+      {/* <Results /> */}
       <Testimonials />
       <Differentials />
       <FAQ />

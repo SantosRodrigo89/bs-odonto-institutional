@@ -1,16 +1,40 @@
 'use client'
 
 import React from 'react'
-import { LuActivity } from 'react-icons/lu'
-import { LuSmile } from 'react-icons/lu'
-import { FiMoon } from 'react-icons/fi'
-import { FiSmile } from 'react-icons/fi'
+import { BruxismoIcon, DtmIcon, EsteticaIcon } from '@/src/components/icons'
+
+type IconProps = {
+  size?: number
+  color?: string
+}
+
+const ICON_SIZE = 28
+const ICON_COLOR = '#6B8E8E'
+
+const RoncoIcon = ({ size = ICON_SIZE, color = ICON_COLOR }: IconProps) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 64 64"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    style={{ color }}
+    aria-hidden="true"
+    focusable="false"
+  >
+    <path d="M20 32 C28 26, 36 26, 44 32 C52 38, 52 48, 44 48 C36 48, 28 42, 20 42 C12 42, 12 36, 20 32 Z" />
+    <path d="M16 40 C24 34, 40 34, 48 40" />
+  </svg>
+)
 
 const whatsappUrl = 'https://api.whatsapp.com/send?phone=5531985280016&text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o.'
 
 const symptomCards = [
   {
-    icon: LuActivity,
+    icon: DtmIcon,
     title: 'Dor na face ou mandíbula',
     category: 'Disfunções da ATM',
     items: [
@@ -22,7 +46,7 @@ const symptomCards = [
     ],
   },
   {
-    icon: LuSmile,
+    icon: BruxismoIcon,
     title: 'Apertamento ou ranger dos dentes',
     category: 'Bruxismo',
     items: [
@@ -34,7 +58,7 @@ const symptomCards = [
     ],
   },
   {
-    icon: FiMoon,
+    icon: RoncoIcon,
     title: 'Sono e Respiração',
     category: 'Sono e Respiração',
     items: [
@@ -45,7 +69,7 @@ const symptomCards = [
     ],
   },
   {
-    icon: FiSmile,
+    icon: EsteticaIcon,
     title: 'Reabilitação e Estética',
     category: 'Reabilitação e Estética',
     items: [
@@ -56,10 +80,10 @@ const symptomCards = [
   },
 ]
 
-function IconCircle({ Icon }: { Icon: React.ComponentType<React.SVGAttributes<SVGElement>> }) {
+function IconCircle({ Icon }: { Icon: React.ComponentType<IconProps> }) {
   return (
     <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-      <Icon className="w-7 h-7 text-primary" strokeWidth={1.5} />
+      <Icon size={ICON_SIZE} color={ICON_COLOR} />
     </div>
   )
 }

@@ -1,40 +1,11 @@
 'use client'
 
 import React from 'react'
-import { BruxismoIcon, DtmIcon, EsteticaIcon } from '@/src/components/icons'
-
-type IconProps = {
-  size?: number
-  color?: string
-}
-
-const ICON_SIZE = 28
-const ICON_COLOR = '#6B8E8E'
-
-const RoncoIcon = ({ size = ICON_SIZE, color = ICON_COLOR }: IconProps) => (
-  <svg
-    width={size}
-    height={size}
-    viewBox="0 0 64 64"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    style={{ color }}
-    aria-hidden="true"
-    focusable="false"
-  >
-    <path d="M20 32 C28 26, 36 26, 44 32 C52 38, 52 48, 44 48 C36 48, 28 42, 20 42 C12 42, 12 36, 20 32 Z" />
-    <path d="M16 40 C24 34, 40 34, 48 40" />
-  </svg>
-)
 
 const whatsappUrl = 'https://api.whatsapp.com/send?phone=5531985280016&text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o.'
 
 const symptomCards = [
   {
-    icon: DtmIcon,
     title: 'Dor na face ou mandíbula',
     category: 'Disfunções da ATM',
     items: [
@@ -46,7 +17,6 @@ const symptomCards = [
     ],
   },
   {
-    icon: BruxismoIcon,
     title: 'Apertamento ou ranger dos dentes',
     category: 'Bruxismo',
     items: [
@@ -58,7 +28,6 @@ const symptomCards = [
     ],
   },
   {
-    icon: RoncoIcon,
     title: 'Sono e Respiração',
     category: 'Sono e Respiração',
     items: [
@@ -69,7 +38,6 @@ const symptomCards = [
     ],
   },
   {
-    icon: EsteticaIcon,
     title: 'Reabilitação e Estética',
     category: 'Reabilitação e Estética',
     items: [
@@ -79,14 +47,6 @@ const symptomCards = [
     ],
   },
 ]
-
-function IconCircle({ Icon }: { Icon: React.ComponentType<IconProps> }) {
-  return (
-    <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-      <Icon size={ICON_SIZE} color={ICON_COLOR} />
-    </div>
-  )
-}
 
 export default function Symptoms() {
   return (
@@ -107,16 +67,13 @@ export default function Symptoms() {
               key={index}
               className="bg-neutral-offWhite p-8 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-secondary/20 flex flex-col"
             >
-              <div className="flex items-center gap-4 mb-5">
-                <IconCircle Icon={card.icon} />
-                <div>
-                  <span className="text-sm font-medium text-primary/80 uppercase tracking-wide">
-                    {card.category}
-                  </span>
-                  <h3 className="text-xl font-semibold text-primary">
-                    {card.title}
-                  </h3>
-                </div>
+              <div className="mb-5">
+                <span className="text-sm font-medium text-primary/80 uppercase tracking-wide">
+                  {card.category}
+                </span>
+                <h3 className="text-xl font-semibold text-primary mt-1">
+                  {card.title}
+                </h3>
               </div>
               <ul className="space-y-3 text-neutral-gray leading-relaxed flex-1">
                 {card.items.map((item, i) => (

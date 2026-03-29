@@ -42,12 +42,6 @@ href="https://www.instagram.com/[seu-usuario]"
 ### 4. Depoimentos Reais
 Substitua os depoimentos placeholder em `components/Testimonials.tsx` por depoimentos reais do Google Reviews.
 
-### 5. Galeria Antes/Depois
-Adicione as imagens reais em `components/Results.tsx`:
-1. Coloque as imagens em `public/images/results/`
-2. Use `next/image` para otimização
-3. Remova os placeholders
-
 ## 🎨 Cores Personalizadas
 
 As cores já estão configuradas no `tailwind.config.js`:

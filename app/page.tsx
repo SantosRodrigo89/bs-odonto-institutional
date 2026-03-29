@@ -4,7 +4,6 @@ import Symptoms from '@/components/Symptoms'
 import Treatments from '@/components/Treatments'
 import About from '@/components/About'
 import Institutional from '@/components/Institutional'
-import Results from '@/components/Results'
 import Testimonials from '@/components/Testimonials'
 import Differentials from '@/components/Differentials'
 import FAQ from '@/components/FAQ'
@@ -21,7 +20,6 @@ export default function Home() {
       <Treatments />
       <About />
       <Institutional />
-      {/* <Results /> */}
       <Testimonials />
       <Differentials />
       <FAQ />

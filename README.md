@@ -58,7 +58,6 @@ npm start
 │   ├── Symptoms.tsx    # Sintomas
 │   ├── Treatments.tsx  # Tratamentos
 │   ├── About.tsx       # Sobre a clínica
-│   ├── Results.tsx     # Resultados (Antes/Depois)
 │   ├── Testimonials.tsx # Depoimentos
 │   ├── Differentials.tsx # Diferenciais
 │   ├── Location.tsx    # Localização

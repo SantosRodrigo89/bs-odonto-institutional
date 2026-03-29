@@ -4,20 +4,35 @@ import { LuStar } from 'react-icons/lu'
 export default function Testimonials() {
   const testimonials = [
     {
-      name: 'Maria Silva',
-      text: 'Excelente atendimento! Resolveram meu problema de bruxismo que me incomodava há anos.',
+      name: 'Sanzio F F (San)',
+      text: 'A Dr Silvia é uma pessoa fantástica! Tranquiliza a gente, muito atenciosa e profissional! A secretaria Monica é muito educada e gentil. Recomendo demais ! Deus abençoe 🙏🏽',
       rating: 5,
     },
     {
-      name: 'João Santos',
-      text: 'Profissionais muito competentes e acolhedores. Recomendo!',
+      name: 'Paula Souza',
+      text: 'Dra Sílvia é uma super profissional, dedicada e nos passa uma calma e segurança recomendo demais a clínica , Mônica sempre muito paciente e atenciosa nota 100000000',
       rating: 5,
     },
     {
-      name: 'Ana Costa',
-      text: 'Tratamento de DTM foi um sucesso. Muito satisfeita com os resultados.',
+      name: 'Mozart Gabriel Rocha',
+      text: 'Eu consulto sempre com a Doutora Beatriz, e ela sempre foi muito carinhosa, calma, compreensiva e acima de tudo, direta e sem demoras.',
       rating: 5,
     },
+    {
+      name: 'Shirlei Lovisi',
+      text: 'Excelentes profissionais super indico',
+      rating: 5
+    },
+    {
+      name: 'Ademir Oliveira',
+      text: 'Atendimento Sensacional, Beatriz e Silvia!',
+      rating: 5
+    },
+    {
+      name: 'Luiz Carlos',
+      text: 'Local bonito bem decorado muito limpinho percebe-se um grande asseio profissionais muito competentes',
+      rating: 5
+    }
   ]
 
   return (
@@ -56,7 +71,7 @@ export default function Testimonials() {
             Veja mais depoimentos no Google
           </p>
           <a
-            href="https://www.google.com/search?q=Consultório+Odontológico+BS+Belo+Horizonte"
+            href="https://share.google/d91F6fjQNPMp94lT9"
             target="_blank"
             rel="noopener noreferrer"
             className="text-primary font-semibold hover:text-primary-dark transition-colors inline-flex items-center"

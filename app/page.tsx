@@ -10,10 +10,12 @@ import FAQ from '@/components/FAQ'
 import Location from '@/components/Location'
 import Footer from '@/components/Footer'
 import FloatingWhatsApp from '@/components/FloatingWhatsApp'
+import StructuredData from '@/components/StructuredData'
 
 export default function Home() {
   return (
     <main className="min-h-screen">
+      <StructuredData />
       <Header />
       <Hero />
       <Symptoms />

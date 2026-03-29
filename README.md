@@ -31,6 +31,14 @@ npm run dev
 
 3. Acesse o site em [http://localhost:3000](http://localhost:3000)
 
+## 🔎 Configuração de SEO
+
+Defina a URL pública do projeto para gerar canonical, Open Graph, `robots.txt` e `sitemap.xml` corretamente:
+
+```bash
+NEXT_PUBLIC_SITE_URL=https://www.seudominio.com.br
+```
+
 ## 📦 Build para Produção
 
 ```bash

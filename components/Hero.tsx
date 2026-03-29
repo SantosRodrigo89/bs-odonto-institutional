@@ -15,7 +15,7 @@ export default function Hero() {
               Seu sorriso é nossa especialidade.
             </h1>
             <p className="text-xl md:text-2xl text-neutral-gray mb-8 leading-relaxed">
-              Atendimento personalizado, diagnóstico preciso e tratamentos que priorizam saúde, conforto e resultados duradouros.
+              Clínica odontológica em Belo Horizonte com atendimento personalizado para DTM, bruxismo, ronco, apneia do sono, implantes, ortodontia e estética dental.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <a

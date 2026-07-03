@@ -1,5 +1,5 @@
-import React from 'react'
 import { LuUserCheck, LuActivity, LuClipboardList, LuMapPin } from 'react-icons/lu'
+import type { IconType } from 'react-icons'
 
 const differentials = [
   {
@@ -26,11 +26,14 @@ const differentials = [
     description:
       'Mais de 20 anos de atuação no mesmo local, com acompanhamento contínuo dos pacientes.',
   },
-]
+] as const
 
-function IconCircle({ Icon }: { Icon: React.ComponentType<React.SVGAttributes<SVGElement>> }) {
+function IconCircle({ Icon }: { Icon: IconType }) {
   return (
-    <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mx-auto mb-4">
+    <div
+      className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mx-auto mb-4"
+      aria-hidden="true"
+    >
       <Icon className="w-7 h-7 text-primary" strokeWidth={1.5} />
     </div>
   )
@@ -38,21 +41,28 @@ function IconCircle({ Icon }: { Icon: React.ComponentType<React.SVGAttributes<SV
 
 export default function Differentials() {
   return (
-    <section className="section-padding bg-gradient-to-b from-white to-neutral-offWhite">
+    <section
+      className="section-padding bg-gradient-to-b from-white to-neutral-offWhite"
+      aria-labelledby="differentials-heading"
+    >
       <div className="container-custom">
         <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+          <h2
+            id="differentials-heading"
+            className="text-3xl md:text-4xl font-bold text-primary mb-4"
+          >
             Por que escolher nosso consultório?
           </h2>
           <p className="text-lg text-neutral-gray max-w-2xl mx-auto">
-            Experiência, especialização e acompanhamento direto pelas próprias dentistas.
+            Experiência, especialização e acompanhamento direto pelas próprias
+            dentistas.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {differentials.map((differential, index) => (
-            <div
-              key={index}
+          {differentials.map((differential) => (
+            <article
+              key={differential.title}
               className="text-center bg-white p-8 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-secondary/20"
             >
               <IconCircle Icon={differential.Icon} />
@@ -62,7 +72,7 @@ export default function Differentials() {
               <p className="text-neutral-gray leading-relaxed">
                 {differential.description}
               </p>
-            </div>
+            </article>
           ))}
         </div>
       </div>

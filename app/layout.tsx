@@ -1,7 +1,19 @@
 import type { Metadata } from 'next'
+import { Inter, Playfair_Display } from 'next/font/google'
 import './globals.css'
-import React from 'react'
 import { siteConfig } from '@/lib/seo'
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-playfair',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -12,7 +24,7 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
-  keywords: siteConfig.keywords,
+  keywords: [...siteConfig.keywords],
   authors: [{ name: 'BS Odonto' }],
   creator: 'BS Odonto',
   publisher: 'BS Odonto',
@@ -65,8 +77,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR">
-      <body>{children}</body>
+    <html lang="pt-BR" className={`${inter.variable} ${playfair.variable}`}>
+      <body>
+        <a href="#conteudo-principal" className="skip-link">
+          Ir para o conteúdo principal
+        </a>
+        {children}
+      </body>
     </html>
   )
 }

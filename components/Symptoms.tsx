@@ -1,8 +1,4 @@
-'use client'
-
-import React from 'react'
-
-const whatsappUrl = 'https://api.whatsapp.com/send?phone=5531985280016&text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o.'
+import { siteConfig } from '@/lib/seo'
 
 const symptomCards = [
   {
@@ -46,25 +42,32 @@ const symptomCards = [
       'Insatisfação com a estética do sorriso',
     ],
   },
-]
+] as const
 
 export default function Symptoms() {
   return (
-    <section className="section-padding bg-white">
+    <section
+      className="section-padding bg-white"
+      aria-labelledby="symptoms-heading"
+    >
       <div className="container-custom">
         <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+          <h2
+            id="symptoms-heading"
+            className="text-3xl md:text-4xl font-bold text-primary mb-4"
+          >
             Sintomas que merecem avaliação odontológica especializada
           </h2>
           <p className="text-lg text-neutral-gray max-w-2xl mx-auto">
-            Alguns sinais podem indicar alterações funcionais ou estruturais que exigem diagnóstico preciso.
+            Alguns sinais podem indicar alterações funcionais ou estruturais
+            que exigem diagnóstico preciso.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {symptomCards.map((card, index) => (
-            <div
-              key={index}
+          {symptomCards.map((card) => (
+            <article
+              key={card.title}
               className="bg-neutral-offWhite p-8 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-secondary/20 flex flex-col"
             >
               <div className="mb-5">
@@ -76,20 +79,23 @@ export default function Symptoms() {
                 </h3>
               </div>
               <ul className="space-y-3 text-neutral-gray leading-relaxed flex-1">
-                {card.items.map((item, i) => (
-                  <li key={i} className="flex gap-2">
-                    <span className="text-primary mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-primary" />
+                {card.items.map((item) => (
+                  <li key={item} className="flex gap-2">
+                    <span
+                      className="text-primary mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-primary"
+                      aria-hidden="true"
+                    />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
-            </div>
+            </article>
           ))}
         </div>
 
         <div className="mt-14 text-center">
           <a
-            href={whatsappUrl}
+            href={siteConfig.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary text-lg px-8 py-4 inline-block"

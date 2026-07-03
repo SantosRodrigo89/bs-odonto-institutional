@@ -2,31 +2,32 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
-
-const whatsappUrl = 'https://api.whatsapp.com/send?phone=5531985280016&text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o.'
+import { useState, useEffect, useCallback } from 'react'
+import { navItems } from '@/lib/navigation'
+import { siteConfig } from '@/lib/seo'
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+  const handleScroll = useCallback(() => {
+    setIsScrolled(window.scrollY > 20)
   }, [])
 
-  const menuItems = [
-    { name: 'Início', href: '#inicio' },
-    { name: 'Tratamentos', href: '#tratamentos' },
-    { name: 'Sobre', href: '#sobre' },
-    { name: 'Resultados', href: '#resultados' },
-    { name: 'Depoimentos', href: '#depoimentos' },
-    { name: 'Perguntas', href: '#faq' },
-    { name: 'Contato', href: '#contato' },
-  ]
+  useEffect(() => {
+    handleScroll()
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [handleScroll])
+
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : ''
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isMobileMenuOpen])
+
+  const closeMobileMenu = () => setIsMobileMenuOpen(false)
 
   return (
     <header
@@ -36,13 +37,15 @@ export default function Header() {
           : 'bg-neutral-offWhite/95 backdrop-blur-sm'
       }`}
     >
-      <nav className="container-custom px-4 md:px-6 lg:px-8 py-4">
+      <nav
+        className="container-custom px-4 md:px-6 lg:px-8 py-4"
+        aria-label="Navegação principal"
+      >
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link href="#inicio" className="flex items-center">
+          <Link href="#inicio" className="flex items-center shrink-0">
             <Image
               src="/images/logo.png"
-              alt="BS Odonto Logo"
+              alt="BS Odonto - Clínica odontológica em Belo Horizonte"
               width={84}
               height={84}
               className="rounded-lg shadow-sm"
@@ -50,9 +53,8 @@ export default function Header() {
             />
           </Link>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            {menuItems.map((item) => (
+            {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
@@ -62,7 +64,7 @@ export default function Header() {
               </Link>
             ))}
             <a
-              href={whatsappUrl}
+              href={siteConfig.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary"
@@ -71,11 +73,13 @@ export default function Header() {
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
+            type="button"
+            className="md:hidden p-2 rounded-lg"
+            onClick={() => setIsMobileMenuOpen((open) => !open)}
+            aria-label={isMobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-menu"
           >
             <svg
               className="w-6 h-6 text-neutral-dark"
@@ -85,6 +89,7 @@ export default function Header() {
               strokeWidth="2"
               viewBox="0 0 24 24"
               stroke="currentColor"
+              aria-hidden="true"
             >
               {isMobileMenuOpen ? (
                 <path d="M6 18L18 6M6 6l12 12" />
@@ -95,25 +100,24 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-4">
-            {menuItems.map((item) => (
+          <div id="mobile-menu" className="md:hidden mt-4 pb-4 space-y-4">
+            {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="block text-neutral-gray hover:text-primary font-medium transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
+                className="block text-neutral-gray hover:text-primary font-medium transition-colors py-1"
+                onClick={closeMobileMenu}
               >
                 {item.name}
               </Link>
             ))}
             <a
-              href={whatsappUrl}
+              href={siteConfig.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary inline-block"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={closeMobileMenu}
             >
               Agendar avaliação
             </a>

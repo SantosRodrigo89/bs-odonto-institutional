@@ -2,9 +2,6 @@ import { FiMapPin, FiPhone, FiClock } from 'react-icons/fi'
 import { siteConfig } from '@/lib/seo'
 
 export default function Location() {
-  const fullAddress = `${siteConfig.address.streetAddress}, ${siteConfig.address.addressLocality} – ${siteConfig.address.addressRegion}, ${siteConfig.address.postalCode}`
-  const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddress)}`
-
   return (
     <section
       id="contato"
@@ -43,7 +40,7 @@ export default function Location() {
                     Endereço
                   </p>
                   <address className="not-italic text-neutral-gray">
-                    {fullAddress}
+                    {siteConfig.fullAddress}
                   </address>
                 </div>
               </li>
@@ -98,7 +95,7 @@ export default function Location() {
                 Agendar pelo WhatsApp
               </a>
               <a
-                href={googleMapsUrl}
+                href={siteConfig.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary text-center"

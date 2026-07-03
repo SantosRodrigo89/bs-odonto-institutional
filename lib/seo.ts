@@ -1,4 +1,21 @@
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim() || 'http://localhost:3000'
+const DEFAULT_SITE_URL = 'https://www.bsodonto.com.br'
+
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL?.trim() || DEFAULT_SITE_URL
+
+export const address = {
+  streetAddress: 'Rua Pedra Preciosa 55A',
+  addressLocality: 'Belo Horizonte',
+  addressRegion: 'MG',
+  postalCode: '31570-580',
+  addressCountry: 'BR',
+} as const
+
+export const fullAddress = `${address.streetAddress}, ${address.addressLocality} – ${address.addressRegion}, ${address.postalCode}`
+
+export const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+  `${address.streetAddress}, ${address.addressLocality} - ${address.addressRegion}, ${address.postalCode}`
+)}`
 
 export const siteConfig = {
   name: 'BS Odonto',
@@ -10,13 +27,10 @@ export const siteConfig = {
   whatsappUrl:
     'https://api.whatsapp.com/send?phone=5531985280016&text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o.',
   instagramUrl: 'https://www.instagram.com/bs_odonto',
-  address: {
-    streetAddress: 'Rua Pedra Preciosa 55A',
-    addressLocality: 'Belo Horizonte',
-    addressRegion: 'MG',
-    postalCode: '31570-580',
-    addressCountry: 'BR',
-  },
+  googleMapsUrl,
+  googleReviewsUrl: 'https://share.google/d91F6fjQNPMp94lT9',
+  address,
+  fullAddress,
   coordinates: {
     latitude: -19.8124475,
     longitude: -43.9848298,
@@ -45,7 +59,8 @@ export const dentists = [
   {
     name: 'Dra. Beatriz Gomes de Alvarenga',
     jobTitle: 'Cirurgiã-Dentista',
-    specialty: 'Dentística restauradora (estética, clareamento, próteses e implantes)',
+    specialty:
+      'Dentística restauradora (estética, clareamento, próteses e implantes)',
     image: '/images/beatriz.png',
     cro: '25292',
   },

@@ -5,8 +5,6 @@ import { footerNavItems } from '@/lib/navigation'
 import { siteConfig } from '@/lib/seo'
 
 export default function Footer() {
-  const fullAddress = `${siteConfig.address.streetAddress}, ${siteConfig.address.addressLocality} – ${siteConfig.address.addressRegion}, ${siteConfig.address.postalCode}`
-
   return (
     <footer className="bg-primary text-white section-padding">
       <div className="container-custom">
@@ -51,7 +49,7 @@ export default function Footer() {
           <div>
             <h2 className="text-xl font-bold mb-4">Contato</h2>
             <address className="not-italic text-white/80 mb-2 text-sm">
-              {fullAddress}
+              {siteConfig.fullAddress}
             </address>
             <div className="mt-4 space-y-2">
               <a

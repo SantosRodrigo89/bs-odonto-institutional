@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Playfair_Display } from 'next/font/google'
 import './globals.css'
+import { geoMetadata } from '@/lib/metadata'
 import { siteConfig } from '@/lib/seo'
 
 const inter = Inter({
@@ -69,6 +70,14 @@ export const metadata: Metadata = {
     },
   },
   category: 'healthcare',
+  ...geoMetadata,
+  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? {
+        verification: {
+          google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+        },
+      }
+    : {}),
 }
 
 export default function RootLayout({

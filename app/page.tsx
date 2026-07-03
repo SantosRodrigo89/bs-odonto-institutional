@@ -10,20 +10,19 @@ import Differentials from '@/components/Differentials'
 import Location from '@/components/Location'
 import Footer from '@/components/Footer'
 import StructuredData from '@/components/StructuredData'
+import { createPageMetadata } from '@/lib/metadata'
 import { siteConfig } from '@/lib/seo'
 
 const Testimonials = dynamic(() => import('@/components/Testimonials'))
 const FAQ = dynamic(() => import('@/components/FAQ'))
 const FloatingWhatsApp = dynamic(() => import('@/components/FloatingWhatsApp'))
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title:
     'BS Odonto | Dentista em Belo Horizonte para DTM, Bruxismo e Estética Dental',
   description: siteConfig.description,
-  alternates: {
-    canonical: '/',
-  },
-}
+  path: '/',
+})
 
 export default function Home() {
   return (

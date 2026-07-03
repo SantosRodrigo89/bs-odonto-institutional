@@ -1,4 +1,5 @@
 import { LuStar } from 'react-icons/lu'
+import { siteConfig } from '@/lib/seo'
 
 const testimonials = [
   {
@@ -88,7 +89,7 @@ export default function Testimonials() {
             Veja mais depoimentos no Google
           </p>
           <a
-            href="https://share.google/d91F6fjQNPMp94lT9"
+            href={siteConfig.googleReviewsUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="text-primary font-semibold hover:text-primary-dark transition-colors inline-flex items-center"

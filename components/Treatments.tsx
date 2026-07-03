@@ -1,52 +1,6 @@
+import { treatments } from '@/data/treatments'
+import Link from 'next/link'
 import { siteConfig } from '@/lib/seo'
-
-const treatments = [
-  {
-    title: 'DTM / Dor Orofacial',
-    description:
-      'Diagnóstico e tratamento das disfunções da articulação temporomandibular, com foco na função, alívio da dor e equilíbrio muscular.',
-  },
-  {
-    title: 'Bruxismo',
-    description:
-      'Soluções personalizadas com placas oclusais e abordagens multidisciplinares para proteger seus dentes e melhorar sua qualidade de sono.',
-  },
-  {
-    title: 'Ronco / Apneia',
-    description:
-      'Tratamento com aparelhos intraorais para controle do ronco e da apneia leve a moderada, promovendo melhor respiração e qualidade do sono.',
-  },
-  {
-    title: 'Implantes dentários',
-    description:
-      'Reposição de dentes perdidos com implantes seguros e planejados individualmente, restaurando função e estética.',
-  },
-  {
-    title: 'Reabilitação / Estética',
-    description:
-      'Transforme seu sorriso com procedimentos estéticos modernos, incluindo clareamento, facetas, próteses totais e parciais.',
-  },
-  {
-    title: 'Ortodontia',
-    description:
-      'Correção do alinhamento dentário e da mordida com aparelhos ortodônticos adequados a cada caso.',
-  },
-  {
-    title: 'Tratamento de Canal',
-    description:
-      'Tratamento endodôntico para remover infecção, preservar o dente e aliviar a dor.',
-  },
-  {
-    title: 'Cirurgia de Siso',
-    description:
-      'Extração dos dentes siso quando há dor, inflamação, infecção ou falta de espaço na arcada.',
-  },
-  {
-    title: 'Atendimento infantil',
-    description:
-      'Atendimento focado na saúde bucal infantil, com foco em prevenção e desenvolvimento saudável.',
-  },
-] as const
 
 export default function Treatments() {
   return (
@@ -71,7 +25,7 @@ export default function Treatments() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {treatments.map((treatment) => (
             <article
-              key={treatment.title}
+              key={treatment.slug}
               className="bg-white p-8 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-secondary/20 hover:border-primary/20 flex flex-col"
             >
               <h3 className="text-2xl font-bold text-primary mb-4">
@@ -80,10 +34,8 @@ export default function Treatments() {
               <p className="text-neutral-gray mb-6 leading-relaxed flex-1">
                 {treatment.description}
               </p>
-              <a
-                href={siteConfig.whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href={`/tratamentos/${treatment.slug}`}
                 className="text-primary font-semibold hover:text-primary-dark transition-colors inline-flex items-center"
               >
                 Saiba mais
@@ -99,7 +51,7 @@ export default function Treatments() {
                 >
                   <path d="M9 5l7 7-7 7" />
                 </svg>
-              </a>
+              </Link>
             </article>
           ))}
         </div>

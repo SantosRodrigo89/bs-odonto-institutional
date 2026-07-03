@@ -1,7 +1,6 @@
+import { treatments } from '@/data/treatments'
 import { faqItems } from '@/data/faqItems'
 import { businessServices, dentists, siteConfig } from '@/lib/seo'
-
-const fullAddress = `${siteConfig.address.streetAddress}, ${siteConfig.address.addressLocality} - ${siteConfig.address.addressRegion}, ${siteConfig.address.postalCode}`
 
 const organizationSchema = {
   '@context': 'https://schema.org',
@@ -13,7 +12,11 @@ const organizationSchema = {
   logo: `${siteConfig.url}${siteConfig.logo}`,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
   telephone: siteConfig.phone,
-  sameAs: [siteConfig.instagramUrl],
+  sameAs: [
+    siteConfig.instagramUrl,
+    siteConfig.googleMapsUrl,
+    siteConfig.googleReviewsUrl,
+  ],
   address: {
     '@type': 'PostalAddress',
     ...siteConfig.address,
@@ -28,6 +31,22 @@ const websiteSchema = {
   url: siteConfig.url,
   description: siteConfig.description,
   publisher: { '@id': `${siteConfig.url}/#organization` },
+  inLanguage: 'pt-BR',
+}
+
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': `${siteConfig.url}/#webpage`,
+  url: siteConfig.url,
+  name: siteConfig.name,
+  description: siteConfig.description,
+  isPartOf: { '@id': `${siteConfig.url}/#website` },
+  about: { '@id': `${siteConfig.url}/#dentist` },
+  primaryImageOfPage: {
+    '@type': 'ImageObject',
+    url: `${siteConfig.url}${siteConfig.ogImage}`,
+  },
   inLanguage: 'pt-BR',
 }
 
@@ -53,12 +72,16 @@ const localBusinessSchema = {
     latitude: siteConfig.coordinates.latitude,
     longitude: siteConfig.coordinates.longitude,
   },
-  hasMap: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddress)}`,
+  hasMap: siteConfig.googleMapsUrl,
   areaServed: {
     '@type': 'City',
     name: 'Belo Horizonte',
   },
-  sameAs: [siteConfig.instagramUrl],
+  sameAs: [
+    siteConfig.instagramUrl,
+    siteConfig.googleMapsUrl,
+    siteConfig.googleReviewsUrl,
+  ],
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -82,6 +105,18 @@ const localBusinessSchema = {
       '@type': 'MedicalProcedure',
       name: service,
     },
+  })),
+}
+
+const servicesItemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Tratamentos odontológicos da BS Odonto',
+  itemListElement: treatments.map((treatment, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: treatment.title,
+    url: `${siteConfig.url}/tratamentos/${treatment.slug}`,
   })),
 }
 
@@ -128,7 +163,9 @@ const faqSchema = {
 const schemas = [
   organizationSchema,
   websiteSchema,
+  webPageSchema,
   localBusinessSchema,
+  servicesItemListSchema,
   breadcrumbSchema,
   faqSchema,
   ...physicianSchemas,

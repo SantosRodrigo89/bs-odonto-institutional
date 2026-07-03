@@ -23,7 +23,8 @@
 
   body {
     @apply bg-neutral-offWhite text-neutral-dark;
-    font-family: var(--font-inter), sans-serif;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+      sans-serif;
   }
 
   h1,
@@ -59,5 +60,10 @@
 
   .container-custom {
     @apply max-w-7xl mx-auto;
+  }
+
+  .below-fold-section {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 600px;
   }
 }

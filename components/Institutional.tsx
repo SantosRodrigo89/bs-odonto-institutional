@@ -1,7 +1,7 @@
 export default function Institutional() {
   return (
     <section
-      className="section-padding bg-neutral-offWhite"
+      className="section-padding bg-neutral-offWhite below-fold-section"
       aria-labelledby="institutional-heading"
     >
       <div className="container-custom">

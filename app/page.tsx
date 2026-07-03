@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import dynamic from 'next/dynamic'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import Symptoms from '@/components/Symptoms'
@@ -7,15 +6,14 @@ import Treatments from '@/components/Treatments'
 import About from '@/components/About'
 import Institutional from '@/components/Institutional'
 import Differentials from '@/components/Differentials'
+import Testimonials from '@/components/Testimonials'
+import FAQ from '@/components/FAQ'
 import Location from '@/components/Location'
 import Footer from '@/components/Footer'
+import FloatingWhatsApp from '@/components/FloatingWhatsApp'
 import StructuredData from '@/components/StructuredData'
 import { createPageMetadata } from '@/lib/metadata'
 import { siteConfig } from '@/lib/seo'
-
-const Testimonials = dynamic(() => import('@/components/Testimonials'))
-const FAQ = dynamic(() => import('@/components/FAQ'))
-const FloatingWhatsApp = dynamic(() => import('@/components/FloatingWhatsApp'))
 
 export const metadata: Metadata = createPageMetadata({
   title:

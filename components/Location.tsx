@@ -1,11 +1,11 @@
-import { FiMapPin, FiPhone, FiClock } from 'react-icons/fi'
+import { FiMapPin, FiPhone, FiClock, FiExternalLink } from 'react-icons/fi'
 import { siteConfig } from '@/lib/seo'
 
 export default function Location() {
   return (
     <section
       id="contato"
-      className="section-padding bg-white"
+      className="section-padding bg-white below-fold-section"
       aria-labelledby="location-heading"
     >
       <div className="container-custom">
@@ -105,18 +105,28 @@ export default function Location() {
             </div>
           </div>
 
-          <div className="rounded-xl overflow-hidden shadow-md min-h-[400px]">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d279646.8971501937!2d-43.984829844039844!3d-19.812447529039225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa68f0063b9f393%3A0x17ce29c9de361fac!2sConsult%C3%B3rio%20Odontol%C3%B3gico%20BS!5e1!3m2!1spt-BR!2sbr!4v1769356573922!5m2!1spt-BR!2sbr"
-              width="100%"
-              height="100%"
-              style={{ minHeight: '400px', border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Localização BS Odonto - Consultório Odontológico em Belo Horizonte"
-            />
-          </div>
+          <a
+            href={siteConfig.googleMapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group rounded-xl overflow-hidden shadow-md min-h-[400px] bg-primary/5 border border-secondary/20 flex flex-col items-center justify-center p-8 text-center hover:bg-primary/10 transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+            aria-label={`Ver localização da BS Odonto no Google Maps: ${siteConfig.fullAddress}`}
+          >
+            <div
+              className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors"
+              aria-hidden="true"
+            >
+              <FiMapPin className="w-8 h-8 text-primary" />
+            </div>
+            <p className="text-lg font-semibold text-primary mb-2">
+              Consultório Odontológico BS
+            </p>
+            <p className="text-neutral-gray mb-4">{siteConfig.fullAddress}</p>
+            <span className="inline-flex items-center gap-2 text-primary font-semibold">
+              Abrir no Google Maps
+              <FiExternalLink className="w-5 h-5" aria-hidden="true" />
+            </span>
+          </a>
         </div>
       </div>
     </section>

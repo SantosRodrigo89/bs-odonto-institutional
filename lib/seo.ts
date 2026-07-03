@@ -61,7 +61,7 @@ export const dentists = [
     jobTitle: 'Cirurgiã-Dentista',
     specialty:
       'Dentística restauradora (estética, clareamento, próteses e implantes)',
-    image: '/images/beatriz.png',
+    image: '/images/beatriz.jpeg',
     cro: '25292',
   },
   {
@@ -69,7 +69,7 @@ export const dentists = [
     jobTitle: 'Cirurgiã-Dentista',
     specialty:
       'Endodontia, DTM, bruxismo, apneia do sono e odontopediatria',
-    image: '/images/silvia.png',
+    image: '/images/silvia.jpeg',
     cro: '24836',
   },
   {
@@ -83,7 +83,7 @@ export const dentists = [
     name: 'Dra. Cíntia Mota',
     jobTitle: 'Cirurgiã-Dentista',
     specialty: 'Ortodontia',
-    image: '/images/cintia.png',
+    image: '/images/cintia.jpeg',
     cro: '45663',
   },
   {

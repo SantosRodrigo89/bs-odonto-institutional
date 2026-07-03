@@ -47,7 +47,7 @@ const symptomCards = [
 export default function Symptoms() {
   return (
     <section
-      className="section-padding bg-white"
+      className="section-padding bg-white below-fold-section"
       aria-labelledby="symptoms-heading"
     >
       <div className="container-custom">
@@ -71,7 +71,7 @@ export default function Symptoms() {
               className="bg-neutral-offWhite p-8 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-secondary/20 flex flex-col"
             >
               <div className="mb-5">
-                <span className="text-sm font-medium text-primary/80 uppercase tracking-wide">
+                <span className="text-sm font-semibold text-primary-dark uppercase tracking-wide">
                   {card.category}
                 </span>
                 <h3 className="text-xl font-semibold text-primary mt-1">

@@ -172,15 +172,15 @@ const schemas = [
 ]
 
 export default function StructuredData() {
+  const graphSchema = {
+    '@context': 'https://schema.org',
+    '@graph': schemas,
+  }
+
   return (
-    <>
-      {schemas.map((schema, index) => (
-        <script
-          key={index}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
-      ))}
-    </>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(graphSchema) }}
+    />
   )
 }

@@ -18,14 +18,14 @@ export default function Footer() {
               className="mb-4 rounded-lg"
               loading="lazy"
             />
-            <p className="text-white/90 mb-4">
+            <p className="text-white mb-4">
               Seu sorriso é nossa especialidade.
             </p>
-            <p className="text-white/80 text-sm">
+            <p className="text-white text-sm">
               Especialistas em DTM, Bruxismo, Ronco/Apneia e Odontologia
               Estética
             </p>
-            <p className="text-white/80 text-sm mt-2">
+            <p className="text-white text-sm mt-2">
               Atendimento de segunda a sexta
             </p>
           </div>
@@ -37,7 +37,7 @@ export default function Footer() {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-white/80 hover:text-white transition-colors"
+                    className="text-white hover:text-white/90 transition-colors"
                   >
                     {item.name}
                   </Link>
@@ -48,7 +48,7 @@ export default function Footer() {
 
           <div>
             <h2 className="text-xl font-bold mb-4">Contato</h2>
-            <address className="not-italic text-white/80 mb-2 text-sm">
+            <address className="not-italic text-white mb-2 text-sm">
               {siteConfig.fullAddress}
             </address>
             <div className="mt-4 space-y-2">
@@ -56,7 +56,7 @@ export default function Footer() {
                 href={siteConfig.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 text-white hover:text-white/90 transition-colors"
               >
                 <FiMessageCircle className="w-5 h-5 shrink-0" aria-hidden="true" />
                 WhatsApp: (31) 98528-0016
@@ -66,7 +66,7 @@ export default function Footer() {
                   href={siteConfig.instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors"
+                  className="inline-flex items-center gap-2 text-white hover:text-white/90 transition-colors"
                 >
                   <FiInstagram className="w-5 h-5 shrink-0" aria-hidden="true" />
                   Instagram
@@ -77,11 +77,11 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/20 pt-8 text-center">
-          <p className="text-white/80 text-sm">
+          <p className="text-white text-sm">
             © {new Date().getFullYear()} BS Odonto. Todos os direitos
             reservados.
           </p>
-          <p className="mt-1 text-white/80 text-sm">
+          <p className="mt-1 text-white text-sm">
             Feito por{' '}
             <a
               href="https://github.com/SantosRodrigo89"

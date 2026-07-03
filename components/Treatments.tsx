@@ -6,7 +6,7 @@ export default function Treatments() {
   return (
     <section
       id="tratamentos"
-      className="section-padding bg-gradient-to-b from-white to-neutral-offWhite"
+      className="section-padding bg-gradient-to-b from-white to-neutral-offWhite below-fold-section"
       aria-labelledby="treatments-heading"
     >
       <div className="container-custom">

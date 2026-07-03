@@ -5,7 +5,7 @@ export default function About() {
   return (
     <section
       id="sobre"
-      className="section-padding bg-white"
+      className="section-padding bg-white below-fold-section"
       aria-labelledby="about-heading"
     >
       <div className="container-custom">

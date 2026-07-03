@@ -1,19 +1,15 @@
-import type { Metadata } from 'next'
-import { Inter, Playfair_Display } from 'next/font/google'
+import type { Metadata, Viewport } from 'next'
+import { Playfair_Display } from 'next/font/google'
 import './globals.css'
 import { geoMetadata } from '@/lib/metadata'
 import { siteConfig } from '@/lib/seo'
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-})
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
   variable: '--font-playfair',
   display: 'swap',
+  weight: ['700'],
+  preload: false,
 })
 
 export const metadata: Metadata = {
@@ -80,13 +76,35 @@ export const metadata: Metadata = {
     : {}),
 }
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#4A726A',
+}
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="pt-BR" className={playfair.variable}>
+      <head>
+        <link
+          rel="preload"
+          as="image"
+          href="/images/beatriz-silvia-mobile.jpeg"
+          fetchPriority="high"
+          media="(max-width: 768px)"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/images/beatriz-silvia.jpeg"
+          fetchPriority="high"
+          media="(min-width: 769px)"
+        />
+      </head>
       <body>
         <a href="#conteudo-principal" className="skip-link">
           Ir para o conteúdo principal
